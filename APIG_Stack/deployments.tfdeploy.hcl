@@ -2,7 +2,7 @@
 # replace the name below before the first deployment. Its values must belong to
 # the new Alibaba Cloud account that will own the APIG instance.
 store "varset" "access_keys" {
-  name     = "REPLACE_WITH_NEW_ACCOUNT_ALICLOUD_CREDENTIAL_VARSET"
+  name     = "aia-ali-nonprod-operations-credentials"
   category = "env"
 }
 
