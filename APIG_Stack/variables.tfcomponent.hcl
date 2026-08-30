@@ -2,12 +2,14 @@ variable "ALICLOUD_ACCESS_KEY" {
   description = "Access key for the new Alibaba Cloud account that owns the APIG instance."
   type        = string
   sensitive   = true
+  ephemeral   = true
 }
 
 variable "ALICLOUD_SECRET_KEY" {
   description = "Secret key paired with ALICLOUD_ACCESS_KEY."
   type        = string
   sensitive   = true
+  ephemeral   = true
 }
 
 variable "region" {
