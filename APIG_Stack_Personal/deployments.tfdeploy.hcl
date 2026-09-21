@@ -12,7 +12,7 @@ deployment "apig" {
     ALICLOUD_SECRET_KEY = store.varset.access_keys.ALICLOUD_SECRET_KEY
 
     region       = "cn-hongkong"
-    gateway_name = "apig-hk01-cn-hk-n-personal01"
+    gateway_name = "apig-hk01-cn-hk-n-test"
 
     gateway_type        = "API"
     gateway_edition     = "Professional"
