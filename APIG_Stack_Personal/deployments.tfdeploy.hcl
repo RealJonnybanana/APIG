@@ -39,6 +39,24 @@ deployment "apig" {
       },
     ]
 
+    lifecycle {
+    # 忽略阿里云 API 自动回填 vswitch 导致的假删除和强制重建
+    ignore_changes = [
+      vswitch
+    ]
+
+    precondition {
+      condition = var.zone_selection == "Auto" ? (
+        try(trimspace(var.vswitch_id) != "", false) && length(var.zones) == 0
+        ) : (
+        var.vswitch_id == null && length(var.zones) > 0
+      )
+      error_message = "Auto zone selection requires vswitch_id and no zones; Manual zone selection requires one or more zones and a null vswitch_id."
+    }
+  }
+}
+
+
     tags = {
       ManagedBy = "terraform-stack"
     }
